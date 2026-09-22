@@ -6,3 +6,11 @@ models/
 data/raw/
 data/frames/
 *.onnx
+# Public datasets downloaded locally
+datasets/source/
+
+# Generated training datasets
+datasets/generated/
+
+preview/
+*.pt

@@ -105,11 +105,13 @@ def main():
         )
 
         cv2.imshow("SceneLens", annotated)
+        if cv2.getWindowProperty("SceneLens", cv2.WND_PROP_VISIBLE) < 1:
+            break
         key = cv2.waitKey(1) & 0xFF
 
-        if key == ord("q"):
+        if key in (27, ord("q"), ord("Q")):
             break
-        elif key == ord("s"):
+        elif key in (ord("s"), ord("S")):
             from pathlib import Path
             out_dir = Path("data/frames")
             out_dir.mkdir(parents=True, exist_ok=True)
